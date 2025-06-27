@@ -15,5 +15,7 @@ jobs:
       - uses: actions/setup-java@v2
         with:
           java-version: 21
-          distribution: temurin
-      - run: ./gradlew build --no-daemon
+          distribution: 'temurin'
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+      - run: ./gradlew build
